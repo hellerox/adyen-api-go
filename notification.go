@@ -29,6 +29,10 @@ type NotificationRequestItemData struct {
 		ExpiryDate               string `json:"expiryDate,omitempty"`
 		AuthorisedAmountValue    string `json:"authorisedAmountValue,omitempty"`
 		AuthorisedAmountCurrency string `json:"authorisedAmountCurrency,omitempty"`
+		VoucherExpirationDate    string `json:"voucher.expirationDate,omitempty"`
+		VoucherURL               string `json:"voucher.url,omitempty"`
+		VoucherBarCodeReference  string `json:"voucher.barCodeReference,omitempty"`
+		VoucherReference         string `json:"voucher.reference,omitempty"`
 	} `json:"additionalData,omitempty"`
 	Amount              Amount     `json:"amount"`
 	PspReference        string     `json:"pspReference"`

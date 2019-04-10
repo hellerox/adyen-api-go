@@ -27,7 +27,7 @@ func (b *StringBool) UnmarshalJSON(data []byte) (err error) {
 	}
 
 	*b = StringBool(parsed)
-	return
+	return err
 }
 
 // MarshalJSON marshalls a StringBool to a slice of bytes

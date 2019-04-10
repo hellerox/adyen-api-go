@@ -38,6 +38,9 @@ func TestResponseNotValidJson(t *testing.T) {
 	t.Parallel()
 
 	providerResponse, err := createTestResponse("", "503", 503)
+	if err == nil {
+		t.Log("expected failure")
+	}
 
 	err = providerResponse.handleHTTPError()
 	if err == nil {

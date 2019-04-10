@@ -15,45 +15,45 @@ func TestPaymentMethodsResponse_ParseMerchantAccount(t *testing.T) {
 
 	exp := PaymentMethodsResponse{
 		PaymentMethods: []PaymentMethodDetails{
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "additionalData.card.encrypted.json",
 						Type: "cardToken"}},
 				Name: "Credit Card",
 				Type: "scheme"},
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Items: []PaymentMethodItems{
-							PaymentMethodItems{ID: "1121", Name: "Test Issuer"},
-							PaymentMethodItems{ID: "1154", Name: "Test Issuer 5"},
-							PaymentMethodItems{ID: "1153", Name: "Test Issuer 4"},
-							PaymentMethodItems{ID: "1152", Name: "Test Issuer 3"},
-							PaymentMethodItems{ID: "1151", Name: "Test Issuer 2"},
-							PaymentMethodItems{ID: "1162", Name: "Test Issuer Cancelled"},
-							PaymentMethodItems{ID: "1161", Name: "Test Issuer Pending"},
-							PaymentMethodItems{ID: "1160", Name: "Test Issuer Refused"},
-							PaymentMethodItems{ID: "1159", Name: "Test Issuer 10"},
-							PaymentMethodItems{ID: "1158", Name: "Test Issuer 9"},
-							PaymentMethodItems{ID: "1157", Name: "Test Issuer 8"},
-							PaymentMethodItems{ID: "1156", Name: "Test Issuer 7"},
-							PaymentMethodItems{ID: "1155", Name: "Test Issuer 6"}},
+							{ID: "1121", Name: "Test Issuer"},
+							{ID: "1154", Name: "Test Issuer 5"},
+							{ID: "1153", Name: "Test Issuer 4"},
+							{ID: "1152", Name: "Test Issuer 3"},
+							{ID: "1151", Name: "Test Issuer 2"},
+							{ID: "1162", Name: "Test Issuer Cancelled"},
+							{ID: "1161", Name: "Test Issuer Pending"},
+							{ID: "1160", Name: "Test Issuer Refused"},
+							{ID: "1159", Name: "Test Issuer 10"},
+							{ID: "1158", Name: "Test Issuer 9"},
+							{ID: "1157", Name: "Test Issuer 8"},
+							{ID: "1156", Name: "Test Issuer 7"},
+							{ID: "1155", Name: "Test Issuer 6"}},
 						Key: "idealIssuer", Type: "select"},
 				},
 				Name: "iDEAL",
 				Type: "ideal",
 			},
-			PaymentMethodDetails{
+			{
 				Name: "Pay later with Klarna.",
 				Type: "klarna"},
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "sepa.ownerName",
 						Type: "text",
 					},
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "sepa.ibanNumber",
 						Type: "text",
 					},
@@ -61,7 +61,7 @@ func TestPaymentMethodsResponse_ParseMerchantAccount(t *testing.T) {
 				Name: "SEPA Direct Debit",
 				Type: "sepadirectdebit",
 			},
-			PaymentMethodDetails{
+			{
 				Name: "UnionPay",
 				Type: "unionpay",
 			},
@@ -81,23 +81,23 @@ func TestPaymentMethodsResponse_ParseCountryAmount(t *testing.T) {
 
 	exp := PaymentMethodsResponse{
 		PaymentMethods: []PaymentMethodDetails{
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Items: []PaymentMethodItems{
-							PaymentMethodItems{ID: "1121", Name: "Test Issuer"},
-							PaymentMethodItems{ID: "1154", Name: "Test Issuer 5"},
-							PaymentMethodItems{ID: "1153", Name: "Test Issuer 4"},
-							PaymentMethodItems{ID: "1152", Name: "Test Issuer 3"},
-							PaymentMethodItems{ID: "1151", Name: "Test Issuer 2"},
-							PaymentMethodItems{ID: "1162", Name: "Test Issuer Cancelled"},
-							PaymentMethodItems{ID: "1161", Name: "Test Issuer Pending"},
-							PaymentMethodItems{ID: "1160", Name: "Test Issuer Refused"},
-							PaymentMethodItems{ID: "1159", Name: "Test Issuer 10"},
-							PaymentMethodItems{ID: "1158", Name: "Test Issuer 9"},
-							PaymentMethodItems{ID: "1157", Name: "Test Issuer 8"},
-							PaymentMethodItems{ID: "1156", Name: "Test Issuer 7"},
-							PaymentMethodItems{ID: "1155", Name: "Test Issuer 6"},
+							{ID: "1121", Name: "Test Issuer"},
+							{ID: "1154", Name: "Test Issuer 5"},
+							{ID: "1153", Name: "Test Issuer 4"},
+							{ID: "1152", Name: "Test Issuer 3"},
+							{ID: "1151", Name: "Test Issuer 2"},
+							{ID: "1162", Name: "Test Issuer Cancelled"},
+							{ID: "1161", Name: "Test Issuer Pending"},
+							{ID: "1160", Name: "Test Issuer Refused"},
+							{ID: "1159", Name: "Test Issuer 10"},
+							{ID: "1158", Name: "Test Issuer 9"},
+							{ID: "1157", Name: "Test Issuer 8"},
+							{ID: "1156", Name: "Test Issuer 7"},
+							{ID: "1155", Name: "Test Issuer 6"},
 						},
 						Key:  "idealIssuer",
 						Type: "select",
@@ -106,26 +106,26 @@ func TestPaymentMethodsResponse_ParseCountryAmount(t *testing.T) {
 				Name: "iDEAL",
 				Type: "ideal",
 			},
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "additionalData.card.encrypted.json",
 						Type: "cardToken"},
 				},
 				Name: "Credit Card",
 				Type: "scheme",
 			},
-			PaymentMethodDetails{
+			{
 				Name: "Pay later with Klarna.",
 				Type: "klarna",
 			},
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "sepa.ownerName",
 						Type: "text",
 					},
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "sepa.ibanNumber",
 						Type: "text",
 					},
@@ -133,7 +133,7 @@ func TestPaymentMethodsResponse_ParseCountryAmount(t *testing.T) {
 				Name: "SEPA Direct Debit",
 				Type: "sepadirectdebit",
 			},
-			PaymentMethodDetails{
+			{
 				Name: "UnionPay",
 				Type: "unionpay",
 			},
@@ -153,23 +153,23 @@ func TestPaymentMethodsResponse_ParseOneClick(t *testing.T) {
 
 	exp := PaymentMethodsResponse{
 		PaymentMethods: []PaymentMethodDetails{
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Items: []PaymentMethodItems{
-							PaymentMethodItems{ID: "1121", Name: "Test Issuer"},
-							PaymentMethodItems{ID: "1154", Name: "Test Issuer 5"},
-							PaymentMethodItems{ID: "1153", Name: "Test Issuer 4"},
-							PaymentMethodItems{ID: "1152", Name: "Test Issuer 3"},
-							PaymentMethodItems{ID: "1151", Name: "Test Issuer 2"},
-							PaymentMethodItems{ID: "1162", Name: "Test Issuer Cancelled"},
-							PaymentMethodItems{ID: "1161", Name: "Test Issuer Pending"},
-							PaymentMethodItems{ID: "1160", Name: "Test Issuer Refused"},
-							PaymentMethodItems{ID: "1159", Name: "Test Issuer 10"},
-							PaymentMethodItems{ID: "1158", Name: "Test Issuer 9"},
-							PaymentMethodItems{ID: "1157", Name: "Test Issuer 8"},
-							PaymentMethodItems{ID: "1156", Name: "Test Issuer 7"},
-							PaymentMethodItems{ID: "1155", Name: "Test Issuer 6"},
+							{ID: "1121", Name: "Test Issuer"},
+							{ID: "1154", Name: "Test Issuer 5"},
+							{ID: "1153", Name: "Test Issuer 4"},
+							{ID: "1152", Name: "Test Issuer 3"},
+							{ID: "1151", Name: "Test Issuer 2"},
+							{ID: "1162", Name: "Test Issuer Cancelled"},
+							{ID: "1161", Name: "Test Issuer Pending"},
+							{ID: "1160", Name: "Test Issuer Refused"},
+							{ID: "1159", Name: "Test Issuer 10"},
+							{ID: "1158", Name: "Test Issuer 9"},
+							{ID: "1157", Name: "Test Issuer 8"},
+							{ID: "1156", Name: "Test Issuer 7"},
+							{ID: "1155", Name: "Test Issuer 6"},
 						},
 						Key:  "idealIssuer",
 						Type: "select",
@@ -177,13 +177,13 @@ func TestPaymentMethodsResponse_ParseOneClick(t *testing.T) {
 				},
 				Name: "iDEAL",
 				Type: "ideal"},
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "additionalData.card.encrypted.json",
 						Type: "cardToken",
 					},
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "storeDetails",
 						Type: "boolean",
 					},
@@ -191,17 +191,17 @@ func TestPaymentMethodsResponse_ParseOneClick(t *testing.T) {
 				Name: "Credit Card",
 				Type: "scheme",
 			},
-			PaymentMethodDetails{
+			{
 				Name: "Pay later with Klarna.",
 				Type: "klarna",
 			},
-			PaymentMethodDetails{
+			{
 				Details: []PaymentMethodDetailsInfo{
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "sepa.ownerName",
 						Type: "text",
 					},
-					PaymentMethodDetailsInfo{
+					{
 						Key:  "sepa.ibanNumber",
 						Type: "text",
 					},
@@ -209,15 +209,15 @@ func TestPaymentMethodsResponse_ParseOneClick(t *testing.T) {
 				Name: "SEPA Direct Debit",
 				Type: "sepadirectdebit",
 			},
-			PaymentMethodDetails{
+			{
 				Name: "UnionPay",
 				Type: "unionpay",
 			},
 		},
 		OneClickPaymentMethods: []OneClickPaymentMethodDetails{
-			OneClickPaymentMethodDetails{
+			{
 				Details: []PaymentMethodTypes{
-					PaymentMethodTypes{
+					{
 						Key:  "cardDetails.cvc",
 						Type: "cvc",
 					},

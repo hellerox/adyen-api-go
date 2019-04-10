@@ -78,7 +78,11 @@ func (a *PaymentGateway) DirectoryLookup(req *DirectoryLookupRequest) (*Director
 
 	url := a.createHPPUrl(directoryLookupURL)
 
-	v, _ := query.Values(req)
+	v, err := query.Values(req)
+	if err != nil {
+		return nil, err
+	}
+
 	url = url + "?" + v.Encode()
 
 	resp, err := a.executeHpp(url, req)
@@ -102,7 +106,11 @@ func (a *PaymentGateway) GetHPPRedirectURL(req *SkipHppRequest) (string, error) 
 
 	url := a.createHPPUrl(skipHppURL)
 
-	v, _ := query.Values(req)
+	v, err := query.Values(req)
+	if err != nil {
+		return "", err
+	}
+
 	url = url + "?" + v.Encode()
 
 	return url, nil

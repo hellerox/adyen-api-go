@@ -150,3 +150,13 @@ func (r *Response) paymentMethods() (*PaymentMethodsResponse, error) {
 
 	return &a, nil
 }
+
+// payments - generate Adyen CheckoutAPI paymentMethods response.
+func (r *Response) payments() (*PaymentResponse, error) {
+	var a PaymentResponse
+	if err := json.Unmarshal(r.Body, &a); err != nil {
+		return nil, err
+	}
+
+	return &a, nil
+}

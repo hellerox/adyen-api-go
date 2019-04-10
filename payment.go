@@ -78,12 +78,19 @@ type AdditionalData struct {
 	AliasType     string      `json:"aliasType,omitempty"`
 	Alias         string      `json:"alias,omitempty"`
 	ExecuteThreeD *StringBool `json:"executeThreeD,omitempty"`
+	Allow3DS2     bool        `json:"allow3DS2,omitempty"`
 }
 
 // BrowserInfo hold information on the user browser
 type BrowserInfo struct {
-	AcceptHeader string `json:"acceptHeader"`
-	UserAgent    string `json:"userAgent"`
+	AcceptHeader   string `json:"acceptHeader"`
+	ColorDepth     int    `json:"colorDepth"`
+	JavaEnabled    bool   `json:"javaEnabled"`
+	Language       string `json:"language"`
+	ScreenHeight   int    `json:"screenHeight"`
+	ScreenWidth    int    `json:"screenWidth"`
+	TimeZoneOffset int    `json:"timeZoneOffset"`
+	UserAgent      string `json:"userAgent"`
 }
 
 // Recurring hold the behavior for a future payment : could be ONECLICK or RECURRING
@@ -187,4 +194,16 @@ type SkipHppRequest struct {
 	CountryCode       string `url:"countryCode"`
 	BrandCode         string `url:"brandCode"`
 	IssuerID          string `url:"issuerId"`
+}
+
+// FraudResult - The fraud result properties of the payment
+type FraudResult struct {
+	AccountScore int `json:"accountScore"`
+	Results      []struct {
+		FraudCheckResult struct {
+			AccountScore int    `json:"accountScore"`
+			CheckID      int    `json:"checkId"`
+			Name         string `json:"name"`
+		} `json:"FraudCheckResult"`
+	} `json:"results"`
 }

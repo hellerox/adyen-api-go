@@ -69,17 +69,7 @@ func equals(tb *testing.T, exp interface{}, act interface{}) {
 	}
 }
 
-func assert(tb *testing.T, cond bool, message string) {
-	_, fullPath, line, _ := runtime.Caller(1)
-	file := filepath.Base(fullPath)
-
-	if !cond {
-		fmt.Printf("%s:%d:\n\t%s\n", file, line, message)
-		tb.FailNow()
-	}
-}
-
-// getTestInstance - instanciate adyen for tests
+// getTestInstance - instantiate adyen for tests
 func getTestInstance() *Adyen {
 	instance := New(
 		Testing,
@@ -89,7 +79,7 @@ func getTestInstance() *Adyen {
 	return instance
 }
 
-// getTestInstanceWithHPP - instanciate adyen for tests
+// getTestInstanceWithHPP - instantiate adyen for tests
 func getTestInstanceWithHPP() *Adyen {
 	instance := NewWithHMAC(
 		Testing,

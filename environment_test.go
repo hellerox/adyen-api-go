@@ -36,7 +36,7 @@ func TestHppURLEnvironmentTest(t *testing.T) {
 func TestCheckoutURLEnvironmentTesting(t *testing.T) {
 	env := TestEnvironment()
 	act := env.CheckoutURL("service", "version")
-	exp := "https://checkout-test.adyen.com/services/PaymentSetupAndVerification/version/service"
+	exp := "https://checkout-test.adyen.com/checkout/version/service"
 
 	equals(t, exp, act)
 }

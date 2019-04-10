@@ -10,14 +10,14 @@ import (
 
 const (
 	// DefaultCurrency is the default currency for transactions
-	DefaultCurrency = "EUR"
+	DefaultCurrency = "MXN"
 
 	// DefaultClientTimeout is the default timeout used when making
 	// HTTP requests to Adyen.
 	DefaultClientTimeout = time.Second * 10
 
 	// PaymentAPIVersion - API version of current payment API
-	PaymentAPIVersion = "v30"
+	PaymentAPIVersion = "v40"
 
 	// RecurringAPIVersion - API version of current recurring API
 	RecurringAPIVersion = "v25"
@@ -29,7 +29,7 @@ const (
 	RecurringService = "Recurring"
 
 	// CheckoutAPIVersion - API version of current checkout API
-	CheckoutAPIVersion = "v32"
+	CheckoutAPIVersion = "v41"
 )
 
 // Adyen - base structure with configuration options
@@ -98,10 +98,8 @@ func NewWithCredentials(env Environment, creds apiCredentials, opts ...Option) *
 		client:      &http.Client{},
 	}
 
-	if opts != nil {
-		for _, opt := range opts {
-			opt(&a)
-		}
+	for _, opt := range opts {
+		opt(&a)
 	}
 
 	return &a
@@ -196,7 +194,7 @@ func (a *Adyen) execute(url string, requestEntity interface{}) (r *Response, err
 		return nil, err
 	}
 
-	return
+	return r, err
 }
 
 // executeHpp - execute request without authorization to Adyen Hosted Payment API
@@ -229,7 +227,7 @@ func (a *Adyen) executeHpp(url string, requestEntity interface{}) (r *Response, 
 		Body:     buf.Bytes(),
 	}
 
-	return
+	return r, err
 }
 
 // Payment - returns PaymentGateway
