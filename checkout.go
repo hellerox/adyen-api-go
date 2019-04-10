@@ -205,15 +205,11 @@ type PaymentResponse struct {
 
 // CheckoutAdditionalData includes additional data about the payment
 type CheckoutAdditionalData struct {
-	Content                  string      `json:"card.encrypted.json,omitempty"`
-	AliasType                string      `json:"aliasType,omitempty"`
-	Alias                    string      `json:"alias,omitempty"`
-	ExecuteThreeD            *StringBool `json:"executeThreeD,omitempty"`
-	CardSummary              string      `json:"cardSummary,omitempty"`
-	PaymentMethod            string      `json:"paymentMethod,omitempty"`
-	AuthorisedAmountValue    int         `json:"authorisedAmountValue,omitempty"`
-	AuthorisedAmountCurrency string      `json:"authorisedAmountCurrency,omitempty"`
-	Allow3DS2                bool        `json:"allow3DS2,omitempty"`
+	CardSummary              string `json:"cardSummary,omitempty"`
+	PaymentMethod            string `json:"paymentMethod,omitempty"`
+	AuthorisedAmountValue    int    `json:"authorisedAmountValue,omitempty"`
+	AuthorisedAmountCurrency string `json:"authorisedAmountCurrency,omitempty"`
+	Allow3DS2                bool   `json:"allow3DS2,omitempty"`
 }
 
 // AError type received
