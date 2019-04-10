@@ -207,7 +207,7 @@ type PaymentResponse struct {
 type CheckoutAdditionalData struct {
 	CardSummary              string `json:"cardSummary,omitempty"`
 	PaymentMethod            string `json:"paymentMethod,omitempty"`
-	AuthorisedAmountValue    int    `json:"authorisedAmountValue,omitempty"`
+	AuthorisedAmountValue    string `json:"authorisedAmountValue,omitempty"`
 	AuthorisedAmountCurrency string `json:"authorisedAmountCurrency,omitempty"`
 	Allow3DS2                bool   `json:"allow3DS2,omitempty"`
 }

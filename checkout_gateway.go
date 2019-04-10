@@ -39,6 +39,9 @@ func (a *CheckoutGateway) Payments(req *PaymentRequest) (*PaymentResponse, error
 	}
 
 	paymentResponse, err := resp.payments()
+	if err != nil {
+		return nil, err
+	}
 	if paymentResponse.Error != nil {
 		return paymentResponse, fmt.Errorf(paymentResponse.Error.Message)
 	}
