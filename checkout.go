@@ -206,6 +206,7 @@ type PaymentResponse struct {
 // CheckoutAdditionalData includes additional data about the payment
 type CheckoutAdditionalData struct {
 	CardSummary              string `json:"cardSummary,omitempty"`
+	CardBin                  string `json:"cardBin,omitempty"`
 	PaymentMethod            string `json:"paymentMethod,omitempty"`
 	CardPaymentMethod        string `json:"cardPaymentMethod,omitempty"`
 	AuthorisedAmountValue    string `json:"authorisedAmountValue,omitempty"`
