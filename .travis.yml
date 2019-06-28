@@ -1,5 +1,8 @@
 language: go
 
+go:
+  - "1.12.6"
+
 sudo: false
 
 install:
@@ -16,19 +19,19 @@ stages:
 jobs:
   include:
     - stage: verification
-      go: "1.10"
+      go: "1.12.6"
       script: make verification
 
     - stage: verification
-      go: "1.11"
+      go: "1.12.6"
       script: make verification
 
     - stage: test
-      go: "1.10"
+      go: "1.12.6"
       script: make test
 
     - stage: test
-      go: "1.11"
+      go: "1.12.6"
       before_script:
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         - chmod +x ./cc-test-reporter

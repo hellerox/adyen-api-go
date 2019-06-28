@@ -14,10 +14,10 @@ const (
 
 	// DefaultClientTimeout is the default timeout used when making
 	// HTTP requests to Adyen.
-	DefaultClientTimeout = time.Second * 10
+	DefaultClientTimeout = time.Second * 15
 
 	// PaymentAPIVersion - API version of current payment API
-	PaymentAPIVersion = "v40"
+	PaymentAPIVersion = "v46"
 
 	// RecurringAPIVersion - API version of current recurring API
 	RecurringAPIVersion = "v25"
@@ -29,7 +29,7 @@ const (
 	RecurringService = "Recurring"
 
 	// CheckoutAPIVersion - API version of current checkout API
-	CheckoutAPIVersion = "v41"
+	CheckoutAPIVersion = "v49"
 )
 
 // Adyen - base structure with configuration options
