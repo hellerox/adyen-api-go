@@ -20,7 +20,7 @@ jobs:
       script: make verification
 
     - stage: verification
-      go: "1.11.0"
+      go: "1.11.1"
       script: make verification
 
     - stage: test
@@ -28,7 +28,7 @@ jobs:
       script: make test
 
     - stage: test
-      go: "1.11.0"
+      go: "1.11.1"
       before_script:
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         - chmod +x ./cc-test-reporter
