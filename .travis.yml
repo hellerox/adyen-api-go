@@ -8,7 +8,7 @@ sudo: false
 install:
   - source .default.env
   - go get ./...
-  - go get github.com/golang/lint/golint
+  - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin v1.17.1
   - go get github.com/kisielk/errcheck
   - go get github.com/joho/godotenv
 
